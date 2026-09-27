@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#14081b">
   <meta name="description" content="Dr. Quizman — скачать APK викторины для Android">
   <title>Dr. Quizman</title>
-  <link rel="stylesheet" href="styles.css?v=20260927-stats">
+  <link rel="stylesheet" href="styles.css?v=20260927-layout2">
   <script src="stats.js" defer></script>
 </head>
 <body>
@@ -49,15 +49,6 @@
             <span>4 варианта ответа</span>
           </div>
 
-          <div class="site-stats" aria-label="Статистика сайта" aria-live="polite">
-            <div class="site-stat" id="visits-stat" title="Посещения с момента подключения счётчика. Повторное открытие в течение 30 минут не добавляет посещение.">
-              <strong id="visit-count">—</strong><span>посещений</span>
-            </div>
-            <div class="site-stat" title="Скачивания APK всех версий по данным GitHub Releases, включая скачивания по прямым ссылкам. Обновление раз в 15 минут.">
-              <strong id="download-count">—</strong><span>скачиваний APK</span>
-            </div>
-          </div>
-          <noscript><p class="stats-note">Для отображения статистики включите JavaScript.</p></noscript>
         </div>
 
         <div class="host-side">
@@ -67,11 +58,21 @@
       </section>
 
       <footer class="bottom-line">
+        <div class="site-facts">
         <span>10 вопросов</span>
         <i></i>
         <span>1 правильный ответ</span>
         <i></i>
         <span>Скачивание без регистрации</span>
+        </div>
+        <div class="site-stats" aria-label="Статистика сайта" aria-live="polite">
+          <div class="site-stat" id="visits-stat" title="Посещения с момента подключения счётчика. Повторное открытие в течение 30 минут не добавляет посещение.">
+            <span>Посещения</span><strong id="visit-count">—</strong>
+          </div>
+          <div class="site-stat" title="Скачивания APK всех версий по данным GitHub Releases. Обновление раз в 15 минут.">
+            <span>Скачивания</span><strong id="download-count">—</strong>
+          </div>
+        </div>
       </footer>
     </section>
   </main>
