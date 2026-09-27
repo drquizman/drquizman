@@ -142,6 +142,7 @@ h1 span{
 
 .host-side{
   position:relative;
+  pointer-events:none;
   display:flex;
   justify-content:center;
   align-items:flex-end;
