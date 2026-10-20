@@ -1,0 +1,304 @@
+{
+  "Questions": [
+    {
+      "Question_ID": 10001,
+      "Question": "¿Crees que un pulpo tiene tres corazones?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10002,
+      "Question": "¿Crees que los plátanos son bayas y las fresas no?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10003,
+      "Question": "¿Crees que la Gran Muralla se ve desde la Luna a simple vista?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10004,
+      "Question": "¿Crees que el oro puede disolverse en agua regia?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10005,
+      "Question": "¿Crees que los pingüinos viven en el Polo Norte?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10006,
+      "Question": "¿Crees que una jirafa tiene tantas vértebras cervicales como una persona?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10007,
+      "Question": "¿Crees que un rayo nunca cae dos veces en el mismo lugar?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10008,
+      "Question": "¿Crees que la miel puede conservarse comestible miles de años?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10009,
+      "Question": "¿Crees que los tiburones no tienen huesos?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10010,
+      "Question": "¿Crees que la Torre Eiffel se construyó como monumento permanente?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10011,
+      "Question": "¿Crees que los pulpos son parientes lejanos de los caracoles?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10012,
+      "Question": "¿Crees que Thomas Edison fue el primero en inventar la bombilla?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10013,
+      "Question": "¿Crees que un gato tiene menos huesos que una persona?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10014,
+      "Question": "¿Crees que el sonido no viaja por el vacío del espacio?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10015,
+      "Question": "¿Crees que la patata procede originalmente de Irlanda?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10016,
+      "Question": "¿Crees que el corazón de un camarón está en la zona de la cabeza?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10017,
+      "Question": "¿Crees que un diamante puede rayarse con una uña?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10018,
+      "Question": "¿Crees que un caracol tiene más dientes que una persona?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10019,
+      "Question": "¿Crees que Saturno flotaría en agua con una bañera suficientemente grande?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10020,
+      "Question": "¿Crees que Napoleón era muy bajo, de unos 150 cm?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10021,
+      "Question": "¿Crees que el camaleón cambia de color sobre todo para camuflarse?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10022,
+      "Question": "¿Crees que las abejas tienen cinco ojos?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10023,
+      "Question": "¿Crees que Venus es más caliente que Mercurio aunque esté más lejos del Sol?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10024,
+      "Question": "¿Crees que el papel se inventó en la antigua Roma?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10025,
+      "Question": "¿Crees que los delfines tienen «nombres» mediante silbidos propios?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10026,
+      "Question": "¿Crees que el vidrio es un líquido muy lento y por eso los vitrales viejos son más gruesos abajo?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10027,
+      "Question": "¿Crees que un pulpo puede abrir un frasco?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10028,
+      "Question": "¿Crees que los canguros no pueden saltar hacia atrás?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10029,
+      "Question": "¿Crees que el champán nació en Champagne como vino dulce sin burbujas?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Verdadero o falso"
+    },
+    {
+      "Question_ID": 10030,
+      "Question": "¿Crees que los humanos tienen más pelos corporales que los chimpancés?",
+      "Answers": [
+        "Sí",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Verdadero o falso"
+    }
+  ]
+}

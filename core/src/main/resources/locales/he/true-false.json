@@ -1,0 +1,304 @@
+{
+  "Questions": [
+    {
+      "Question_ID": 10001,
+      "Question": "האם נכון שלתמנון יש שלושה לבבות?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10002,
+      "Question": "האם נכון שבננות הן גרגרים מבחינה בוטנית, ותות שדה אינו כזה?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10003,
+      "Question": "האם נכון שאפשר לראות את החומה הסינית מהירח בעין בלתי מזוינת?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10004,
+      "Question": "האם נכון שאפשר להמיס זהב במי מלך?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10005,
+      "Question": "האם נכון שפינגווינים חיים בקוטב הצפוני?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10006,
+      "Question": "האם נכון שלג'ירפה יש אותו מספר חוליות צוואר כמו לאדם?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10007,
+      "Question": "האם נכון שברק לעולם לא פוגע באותו מקום פעמיים?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10008,
+      "Question": "האם נכון שדבש יכול להישמר אלפי שנים בלי להתקלקל?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10009,
+      "Question": "האם נכון שלכרישים אין עצמות?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10010,
+      "Question": "האם נכון שמגדל אייפל נבנה כאנדרטה קבועה?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10011,
+      "Question": "האם נכון שתמנונים הם קרובי משפחה רחוקים של חלזונות?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10012,
+      "Question": "האם נכון שתומס אדיסון היה הראשון בעולם שהמציא נורת חשמל?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10013,
+      "Question": "האם נכון שלחתול יש פחות עצמות מאדם?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10014,
+      "Question": "האם נכון שקול אינו מתפשט בריק של החלל?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10015,
+      "Question": "האם נכון שתפוח האדמה מקורו באירלנד?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10016,
+      "Question": "האם נכון שלשרימפס הלב נמצא באזור הראש?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10017,
+      "Question": "האם נכון שאפשר לשרוט יהלום בציפורן?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10018,
+      "Question": "האם נכון שלחלזון יש יותר שיניים מלאדם?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10019,
+      "Question": "האם נכון ששבתאי היה יכול לצוף במים, אילו הייתה אמבטיה גדולה מספיק?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10020,
+      "Question": "האם נכון שנפוליאון היה נמוך מאוד — בערך 150 ס״מ?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10021,
+      "Question": "האם נכון שזיקית משנה צבע בעיקר לצורכי הסוואה?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10022,
+      "Question": "האם נכון שלדבורים יש חמש עיניים?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10023,
+      "Question": "האם נכון שנוגה חמה מכוכב חמה אף שהיא רחוקה יותר מהשמש?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10024,
+      "Question": "האם נכון שהנייר הומצא ברומא העתיקה?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10025,
+      "Question": "האם נכון שלדולפינים יש 'שמות' בדמות שריקות זיהוי ייחודיות?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10026,
+      "Question": "האם נכון שזכוכית היא נוזל איטי מאוד ולכן חלונות ישנים עבים יותר בתחתית?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10027,
+      "Question": "האם נכון שתמנון יכול לפתוח צנצנת?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10028,
+      "Question": "האם נכון שקנגורו אינם מסוגלים לקפוץ לאחור?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10029,
+      "Question": "האם נכון ששמפניה נוצרה בחבל שמפאן כיין מתוק ללא בועות?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "נכון או לא נכון"
+    },
+    {
+      "Question_ID": 10030,
+      "Question": "האם נכון שלאדם יש יותר שערות גוף משימפנזה?",
+      "Answers": [
+        "כן",
+        "לא"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "נכון או לא נכון"
+    }
+  ]
+}

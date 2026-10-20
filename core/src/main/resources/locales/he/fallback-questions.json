@@ -1,0 +1,112 @@
+{
+  "Questions": [
+    {
+      "Question_ID": 9001,
+      "Question": "כמה מיתרים יש בגיטרה קלאסית?",
+      "Answers": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "Correct_Answer_Index": 2,
+      "Topic": "מוזיקה"
+    },
+    {
+      "Question_ID": 9002,
+      "Question": "מהי בירת אוסטרליה?",
+      "Answers": [
+        "סידני",
+        "מלבורן",
+        "קנברה",
+        "פרת'"
+      ],
+      "Correct_Answer_Index": 2,
+      "Topic": "גאוגרפיה"
+    },
+    {
+      "Question_ID": 9004,
+      "Question": "כמה מעלות יש בזווית ישרה?",
+      "Answers": [
+        "45",
+        "90",
+        "180",
+        "360"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "מדע"
+    },
+    {
+      "Question_ID": 9005,
+      "Question": "איזה כוכב לכת הוא הקרוב ביותר לשמש?",
+      "Answers": [
+        "נוגה",
+        "כדור הארץ",
+        "מאדים",
+        "כוכב חמה"
+      ],
+      "Correct_Answer_Index": 3,
+      "Topic": "מדע"
+    },
+    {
+      "Question_ID": 9006,
+      "Question": "באיזו שנה דרך אדם לראשונה על הירח?",
+      "Answers": [
+        "1957",
+        "1961",
+        "1969",
+        "1975"
+      ],
+      "Correct_Answer_Index": 2,
+      "Topic": "היסטוריה"
+    },
+    {
+      "Question_ID": 9007,
+      "Question": "מהו האוקיינוס הגדול ביותר?",
+      "Answers": [
+        "האטלנטי",
+        "ההודי",
+        "הארקטי",
+        "השקט"
+      ],
+      "Correct_Answer_Index": 3,
+      "Topic": "גאוגרפיה"
+    },
+    {
+      "Question_ID": 9008,
+      "Question": "כמה קלידים יש בפסנתר סטנדרטי?",
+      "Answers": [
+        "76",
+        "88",
+        "92",
+        "64"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "מוזיקה"
+    },
+    {
+      "Question_ID": 9009,
+      "Question": "איך קראו לסוס של אלכסנדר הגדול?",
+      "Answers": [
+        "בוקפאלוס",
+        "רוסיננטה",
+        "פגסוס",
+        "אינקיטטוס"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "היסטוריה"
+    },
+    {
+      "Question_ID": 9010,
+      "Question": "איזה יסוד כימי מסומן Au?",
+      "Answers": [
+        "כסף",
+        "זהב",
+        "אלומיניום",
+        "ארגון"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "מדע"
+    }
+  ]
+}

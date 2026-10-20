@@ -1,0 +1,304 @@
+{
+  "Questions": [
+    {
+      "Question_ID": 10001,
+      "Question": "Glaubst du, dass ein Oktopus drei Herzen hat?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10002,
+      "Question": "Glaubst du, dass Bananen botanisch Beeren sind, Erdbeeren aber nicht?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10003,
+      "Question": "Glaubst du, dass man die Chinesische Mauer vom Mond mit bloßem Auge sehen kann?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10004,
+      "Question": "Glaubst du, dass sich Gold in Königswasser auflösen lässt?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10005,
+      "Question": "Glaubst du, dass Pinguine am Nordpol leben?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10006,
+      "Question": "Glaubst du, dass eine Giraffe genauso viele Halswirbel hat wie ein Mensch?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10007,
+      "Question": "Glaubst du, dass ein Blitz nie zweimal am selben Ort einschlägt?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10008,
+      "Question": "Glaubst du, dass Honig Tausende Jahre essbar bleiben kann?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10009,
+      "Question": "Glaubst du, dass Haie keine Knochen haben?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10010,
+      "Question": "Glaubst du, dass der Eiffelturm als dauerhaftes Bauwerk geplant war?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10011,
+      "Question": "Glaubst du, dass Oktopusse entfernte Verwandte von Schnecken sind?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10012,
+      "Question": "Glaubst du, dass Thomas Edison als Erster die Glühlampe erfand?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10013,
+      "Question": "Glaubst du, dass eine Katze weniger Knochen hat als ein Mensch?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10014,
+      "Question": "Glaubst du, dass sich Schall im Vakuum des Weltraums nicht ausbreiten kann?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10015,
+      "Question": "Glaubst du, dass Kartoffeln ursprünglich aus Irland stammen?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10016,
+      "Question": "Glaubst du, dass das Herz einer Garnele im Kopfbereich liegt?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10017,
+      "Question": "Glaubst du, dass man einen Diamanten mit dem Fingernagel zerkratzen kann?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10018,
+      "Question": "Glaubst du, dass eine Schnecke mehr Zähne hat als ein Mensch?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10019,
+      "Question": "Glaubst du, dass Saturn in Wasser schwimmen würde, wäre die Wanne groß genug?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10020,
+      "Question": "Glaubst du, dass Napoleon extrem klein war, etwa 150 cm?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10021,
+      "Question": "Glaubst du, dass ein Chamäleon seine Farbe hauptsächlich zur Tarnung wechselt?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10022,
+      "Question": "Glaubst du, dass Bienen fünf Augen haben?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10023,
+      "Question": "Glaubst du, dass Venus heißer als Merkur ist, obwohl sie weiter von der Sonne entfernt ist?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10024,
+      "Question": "Glaubst du, dass Papier im alten Rom erfunden wurde?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10025,
+      "Question": "Glaubst du, dass Delfine individuelle Erkennungspfiffe wie „Namen“ haben?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10026,
+      "Question": "Glaubst du, Glas sei eine sehr langsame Flüssigkeit und alte Fenster deshalb unten dicker?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10027,
+      "Question": "Glaubst du, dass ein Oktopus ein Schraubglas öffnen kann?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10028,
+      "Question": "Glaubst du, dass Kängurus nicht rückwärts springen können?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10029,
+      "Question": "Glaubst du, Champagner begann in der Champagne als süßer Wein ohne Bläschen?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Wahr oder falsch"
+    },
+    {
+      "Question_ID": 10030,
+      "Question": "Glaubst du, dass Menschen mehr Körperhaare als Schimpansen haben?",
+      "Answers": [
+        "Ja",
+        "Nein"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Wahr oder falsch"
+    }
+  ]
+}

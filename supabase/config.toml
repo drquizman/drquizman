@@ -1,0 +1,11 @@
+project_id = "drquizman"
+
+[functions.quizman]
+# The handler validates per-installation bearer credentials and the Telegram webhook secret.
+verify_jwt = false
+entrypoint = "./functions/quizman/index.mjs"
+
+[functions.website-stats]
+# Public aggregate counters; private database tables are accessed only server-side.
+verify_jwt = false
+entrypoint = "./functions/website-stats/index.mjs"

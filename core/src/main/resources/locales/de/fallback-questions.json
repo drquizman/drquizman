@@ -1,0 +1,112 @@
+{
+  "Questions": [
+    {
+      "Question_ID": 9001,
+      "Question": "Wie viele Saiten hat eine klassische Gitarre?",
+      "Answers": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "Correct_Answer_Index": 2,
+      "Topic": "Musik"
+    },
+    {
+      "Question_ID": 9002,
+      "Question": "Was ist die Hauptstadt Australiens?",
+      "Answers": [
+        "Sydney",
+        "Melbourne",
+        "Canberra",
+        "Perth"
+      ],
+      "Correct_Answer_Index": 2,
+      "Topic": "Geografie"
+    },
+    {
+      "Question_ID": 9004,
+      "Question": "Wie viele Grad hat ein rechter Winkel?",
+      "Answers": [
+        "45",
+        "90",
+        "180",
+        "360"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Wissenschaft"
+    },
+    {
+      "Question_ID": 9005,
+      "Question": "Welcher Planet ist der Sonne am nächsten?",
+      "Answers": [
+        "Venus",
+        "Erde",
+        "Mars",
+        "Merkur"
+      ],
+      "Correct_Answer_Index": 3,
+      "Topic": "Wissenschaft"
+    },
+    {
+      "Question_ID": 9006,
+      "Question": "In welchem Jahr betrat erstmals ein Mensch den Mond?",
+      "Answers": [
+        "1957",
+        "1961",
+        "1969",
+        "1975"
+      ],
+      "Correct_Answer_Index": 2,
+      "Topic": "Geschichte"
+    },
+    {
+      "Question_ID": 9007,
+      "Question": "Welcher Ozean ist der größte?",
+      "Answers": [
+        "Atlantik",
+        "Indischer Ozean",
+        "Arktischer Ozean",
+        "Pazifik"
+      ],
+      "Correct_Answer_Index": 3,
+      "Topic": "Geografie"
+    },
+    {
+      "Question_ID": 9008,
+      "Question": "Wie viele Tasten hat ein Standardklavier?",
+      "Answers": [
+        "76",
+        "88",
+        "92",
+        "64"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Musik"
+    },
+    {
+      "Question_ID": 9009,
+      "Question": "Wie hieß das Pferd Alexanders des Großen?",
+      "Answers": [
+        "Bukephalos",
+        "Rosinante",
+        "Pegasus",
+        "Incitatus"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Geschichte"
+    },
+    {
+      "Question_ID": 9010,
+      "Question": "Welches chemische Element hat das Symbol Au?",
+      "Answers": [
+        "Silber",
+        "Gold",
+        "Aluminium",
+        "Argon"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Wissenschaft"
+    }
+  ]
+}

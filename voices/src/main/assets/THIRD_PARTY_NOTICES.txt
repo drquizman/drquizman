@@ -1,0 +1,18 @@
+Quizman Voices 0.1
+
+Offline Russian speech using Supertonic 3 (INT8) and sherpa-onnx 1.13.8.
+Model snapshot: sherpa-onnx-supertonic-3-tts-int8-2026-05-11.
+Model source: https://github.com/k2-fsa/sherpa-onnx/releases/tag/tts-models
+Original model: https://huggingface.co/supertone-oss-archive/supertonic-3
+Model copyright: Supertone Inc. Model license: BigScience Open RAIL-M.
+The included quantized ONNX model is a derivative of Supertonic 3.
+The full model license, including use restrictions, is included in LICENSE-supertonic-model.txt.
+Upstream sample-code license: supertonic/LICENSE (MIT).
+
+sherpa-onnx: https://github.com/k2-fsa/sherpa-onnx/tree/v1.13.8
+Copyright (c) 2022-2026 by k2-fsa. Apache License 2.0 (LICENSE-sherpa-onnx.txt).
+ONNX Runtime: https://github.com/microsoft/onnxruntime
+Copyright (c) Microsoft Corporation. MIT License (LICENSE-onnxruntime.txt).
+
+This app does not clone voices. It provides the ten bundled voice profiles.
+No internet permission, account, analytics, or cloud inference.

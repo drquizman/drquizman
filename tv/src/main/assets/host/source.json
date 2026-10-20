@@ -1,0 +1,35 @@
+{
+  "source": "assets/host-3d-v1/archive-doctor/doctor-animated.glb",
+  "sha256": "fe9fd033f5e2bb2831d43f19928f5367c10475d0cbfd86a482d40eb31b32f85d",
+  "rig": 2,
+  "animations": [
+    "wait",
+    "hi",
+    "count",
+    "dance",
+    "laughing",
+    "talking",
+    "talking2",
+    "talking3",
+    "arguing",
+    "acknowledging",
+    "angry_gesture",
+    "annoyed_head_shake",
+    "being_cocky",
+    "dismissing_gesture",
+    "happy_hand_gesture",
+    "hard_head_nod",
+    "head_nod_yes",
+    "lengthy_head_nod",
+    "look_away_gesture",
+    "relieved_sigh",
+    "sarcastic_head_nod",
+    "shaking_head_no",
+    "thoughtful_head_shake",
+    "weight_shift"
+  ],
+  "addedMorphTargets": [
+    "SpeechOpen",
+    "Blink"
+  ]
+}

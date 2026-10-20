@@ -1,0 +1,304 @@
+{
+  "Questions": [
+    {
+      "Question_ID": 10001,
+      "Question": "Do you believe an octopus has three hearts?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10002,
+      "Question": "Do you believe bananas are berries, while strawberries are not?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10003,
+      "Question": "Do you believe the Great Wall of China is visible from the Moon with the naked eye?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10004,
+      "Question": "Do you believe gold can be dissolved in aqua regia?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10005,
+      "Question": "Do you believe penguins live at the North Pole?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10006,
+      "Question": "Do you believe a giraffe has the same number of neck vertebrae as a human?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10007,
+      "Question": "Do you believe lightning never strikes the same place twice?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10008,
+      "Question": "Do you believe honey can remain edible for thousands of years?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10009,
+      "Question": "Do you believe sharks have no bones?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10010,
+      "Question": "Do you believe the Eiffel Tower was built as a permanent monument?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10011,
+      "Question": "Do you believe octopuses are distant relatives of snails?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10012,
+      "Question": "Do you believe Thomas Edison was the first person in the world to invent the light bulb?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10013,
+      "Question": "Do you believe a cat has fewer bones than a human?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10014,
+      "Question": "Do you believe sound cannot travel through the vacuum of space?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10015,
+      "Question": "Do you believe potatoes originally came from Ireland?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10016,
+      "Question": "Do you believe a shrimp's heart is in its head region?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10017,
+      "Question": "Do you believe a diamond can be scratched with a fingernail?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10018,
+      "Question": "Do you believe a snail has more teeth than a human?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10019,
+      "Question": "Do you believe Saturn would float in water if a bathtub were large enough?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10020,
+      "Question": "Do you believe Napoleon was extremely short, around 150 cm tall?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10021,
+      "Question": "Do you believe a chameleon changes color mainly for camouflage?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10022,
+      "Question": "Do you believe bees have five eyes?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10023,
+      "Question": "Do you believe Venus is hotter than Mercury even though it is farther from the Sun?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10024,
+      "Question": "Do you believe paper was invented in Ancient Rome?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10025,
+      "Question": "Do you believe dolphins have 'names' in the form of unique signature whistles?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10026,
+      "Question": "Do you believe glass is a very slow liquid, making old windows thicker at the bottom?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10027,
+      "Question": "Do you believe an octopus can open a jar?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10028,
+      "Question": "Do you believe kangaroos cannot jump backward?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10029,
+      "Question": "Do you believe champagne began in Champagne as a sweet wine without bubbles?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "True or False"
+    },
+    {
+      "Question_ID": 10030,
+      "Question": "Do you believe humans have more body hairs than chimpanzees?",
+      "Answers": [
+        "Yes",
+        "No"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "True or False"
+    }
+  ]
+}

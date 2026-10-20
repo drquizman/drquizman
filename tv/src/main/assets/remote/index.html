@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Dr. Quizman</title>
+  <style>
+    :root {
+      --deep: #160d19;
+      --mid: #362032;
+      --magenta: #d8a16c;
+      --gold: #e9bd78;
+      --cream: #fff0d8;
+      --ink: #281525;
+      --cyan: #3dfff3;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      font-family: system-ui, Segoe UI, sans-serif;
+      background:
+        radial-gradient(circle at 15% 0%, #d8a16c26, transparent 34%),
+        radial-gradient(circle at 90% 10%, #e9bd781f, transparent 30%),
+        linear-gradient(180deg, #160d19, #362032 52%, #08030f);
+      color: var(--cream);
+    }
+    .wrap { max-width: 440px; margin: 0 auto; padding: 20px 18px 32px; }
+    h1 { margin: 0; color: #ffe49a; letter-spacing: .055em; font-size: 1.5rem; text-shadow: 0 0 22px #e9bd7844; }
+    .sub { color: var(--magenta); font-weight: 800; margin: 0 0 16px; }
+    label { display: block; font-size: .8rem; opacity: .7; margin: 12px 0 6px; }
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid #e9bd7866;
+      background: linear-gradient(135deg, #482d40ee, #211421ee);
+      color: var(--cream);
+      font-size: 1.1rem;
+    }
+    button, .key {
+      appearance: none;
+      border: 0;
+      border-radius: 16px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .primary {
+      width: 100%;
+      margin-top: 18px;
+      padding: 16px;
+      background: linear-gradient(135deg, #fff6e4, #e9bd78);
+      color: var(--ink);
+      box-shadow: 0 10px 28px #d8a16c35, inset 0 1px #ffffff55;
+      font-size: 1.05rem;
+    }
+    .ghost {
+      width: 100%;
+      margin-top: 10px;
+      padding: 12px;
+      background: transparent;
+      color: #fff8;
+      font-size: .9rem;
+    }
+    .err { color: #ff6b7a; font-weight: 700; min-height: 1.2em; margin-top: 8px; }
+    .top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .who { display: flex; align-items: center; gap: 10px; min-width: 0; }
+    .face { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 3px solid #fff; flex-shrink: 0; background: #fff2; }
+    .name { font-weight: 900; font-size: 1.05rem; }
+    .meta { opacity: .7; font-size: .85rem; }
+    .title { color: var(--gold); font-weight: 900; margin: 10px 0 14px; letter-spacing: .04em; }
+    .keys { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+    .key {
+      padding: 22px 12px;
+      min-height: 92px;
+      background: linear-gradient(145deg, #482d40, #211421);
+      color: white;
+      font-size: 2.2rem;
+      text-align: center;
+      border: 2px solid #e9bd7888;
+      box-shadow: 0 10px 24px #0008, inset 0 1px #ffffff1f;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    .key:not(:disabled):active { transform: translateY(2px) scale(.985); background: #e9bd78; color: var(--ink); }
+    .key:disabled { opacity: .35; }
+    .msg { text-align: center; font-size: 1.05rem; padding: 24px 8px; }
+    .avatars { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: 8px 0 14px; }
+    .avatars button {
+      padding: 4px;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #482d40, #211421);
+      border: 2px solid #ffffff18;
+    }
+    .avatars button.mine { border-color: var(--gold); background: #e9bd7833; }
+    .avatars button.taken { opacity: .32; }
+    .avatars img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; display: block; }
+    .key.bet { font-size: 1.55rem; min-height: 84px; }
+    .clock {
+      font-size: 4.2rem;
+      font-weight: 900;
+      text-align: center;
+      color: var(--gold);
+      line-height: 1;
+      margin: 4px 0 10px;
+      letter-spacing: .04em;
+    }
+    .clock.danger { color: #ff3b4a; }
+    .clock.frozen { color: var(--cyan); }
+    .pips { display: flex; gap: 5px; margin-top: 6px; }
+    .pip {
+      width: 12px; height: 12px; border-radius: 50%;
+      border: 2px solid #fff6;
+      background: #14002b66;
+    }
+    .pip.on { background: var(--gold); border-color: var(--gold); }
+    .pip.goal { border-color: var(--gold); }
+  </style>
+</head>
+<body>
+  <div class="wrap" id="app"></div>
+  <script>
+    const translations = __REMOTE_DICTIONARY__;
+    const tr = (key, ...args) => (translations[key] || key).replace(/\{(\d+)\}/g, (m, i) => args[i] ?? m);
+
+    const COLORS = ["#2E6BFF", "#FF8A1F", "#2ECC5A", "#FFE14A", "#FF5AD5", "#3DFFF3"];
+    const params = new URLSearchParams(location.search);
+    const state = {
+      ws: null,
+      playerId: null,
+      colorIndex: 0,
+      snap: null,
+      error: "",
+      name: localStorage.getItem("dq_name") || "",
+      pin: params.get("pin") || "",
+      resumeToken: localStorage.getItem("dq_resume") || "",
+      seated: false,
+      leaving: false,
+      reconnecting: false,
+      reconnectTimer: null,
+      retries: 0,
+      uiKey: "",
+      elimBuzz: false,
+      lowBuzz: false,
+    };
+
+    const stay = { lock: null, video: null };
+
+    function wakeVideo() {
+      if (stay.video) return stay.video;
+      const v = document.createElement("video");
+      v.muted = true;
+      v.defaultMuted = true;
+      v.loop = true;
+      v.playsInline = true;
+      v.setAttribute("playsinline", "");
+      v.setAttribute("webkit-playsinline", "");
+      v.setAttribute("muted", "");
+      v.preload = "auto";
+      v.src = "/keepawake.mp4";
+      v.style.cssText = "position:fixed;width:2px;height:2px;opacity:0;pointer-events:none;left:0;bottom:0";
+      v.addEventListener("timeupdate", () => {
+        if (v.currentTime > 0.8) v.currentTime = 0;
+      });
+      document.body.appendChild(v);
+      stay.video = v;
+      return v;
+    }
+
+    async function holdAwake() {
+      if (document.visibilityState !== "visible") return;
+      if (navigator.wakeLock) {
+        try {
+          if (!stay.lock) {
+            stay.lock = await navigator.wakeLock.request("screen");
+            stay.lock.addEventListener("release", () => { stay.lock = null; });
+          }
+          if (stay.video) try { stay.video.pause(); } catch (e) {}
+          return;
+        } catch (e) {}
+      }
+      try { await wakeVideo().play(); } catch (e) {}
+    }
+
+    document.addEventListener("pointerdown", holdAwake, { passive: true });
+    document.addEventListener("touchstart", holdAwake, { passive: true });
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") holdAwake();
+    });
+    window.addEventListener("pageshow", holdAwake);
+
+    function send(obj) {
+      if (state.ws && state.ws.readyState === 1) state.ws.send(JSON.stringify(obj));
+    }
+    function vibrate() { try { navigator.vibrate(30); } catch (e) {} }
+
+    function saveSeat(token) {
+      state.resumeToken = token || "";
+      if (state.resumeToken) localStorage.setItem("dq_resume", state.resumeToken);
+      else localStorage.removeItem("dq_resume");
+    }
+
+    function clearSeat() {
+      saveSeat("");
+      state.seated = false;
+    }
+
+    function uiKey() {
+      const s = state.snap;
+      const p = me() || {};
+      if (!state.playerId || !s) return "join:" + state.error + ":" + state.reconnecting;
+      return [s.phase, s.competition, s.question && s.question.id, p.ready, p.answered, p.lastCorrect, p.score, p.avatarIndex, p.eliminated, p.finalFrozen, Math.floor((p.finalTimeMs || 0) / 1000), p.contestMarks, p.bet, s.contestMarksGoal, s.bettingOpen, s.paused, s.hostLine, s.winnerId, s.topicChooserId, s.chosenTopic, (s.topics || []).join(","), s.bombHolderId, s.bombStrikes, s.bombExploded, state.reconnecting, (s.players || []).map(x => x.avatarIndex + (x.connected === false ? "x" : "")).join("-")].join("|");
+    }
+
+    function scheduleReconnect() {
+      if (state.leaving || state.reconnectTimer || !state.resumeToken) return;
+      state.reconnecting = true;
+      const wait = Math.min(3000, 500 * Math.pow(1.4, state.retries));
+      state.reconnectTimer = setTimeout(() => {
+        state.reconnectTimer = null;
+        state.retries += 1;
+        connect();
+      }, wait);
+    }
+
+    function connect() {
+      state.error = "";
+      state.leaving = false;
+      localStorage.setItem("dq_name", state.name);
+      const prev = state.ws;
+      state.ws = null;
+      if (prev) {
+        prev.onclose = null;
+        prev.onerror = null;
+        prev.onmessage = null;
+        try { prev.close(); } catch (e) {}
+      }
+      const proto = location.protocol === "https:" ? "wss" : "ws";
+      const ws = new WebSocket(proto + "://" + location.host + "/ws");
+      state.ws = ws;
+      ws.onopen = () => {
+        const hello = { type: "hello", pin: state.pin.trim(), name: state.name.trim() || tr("remote.001") };
+        if (state.resumeToken) hello.resumeToken = state.resumeToken;
+        send(hello);
+      };
+      ws.onmessage = (ev) => {
+        const msg = JSON.parse(ev.data);
+        if (msg.type === "welcome") {
+          state.playerId = msg.playerId;
+          state.colorIndex = msg.colorIndex;
+          saveSeat(msg.resumeToken);
+          state.seated = true;
+          state.reconnecting = false;
+          state.retries = 0;
+          state.error = "";
+        } else if (msg.type === "snapshot") {
+          state.snap = msg.state;
+        } else if (msg.type === "error") {
+          state.error = msg.message;
+          state.reconnecting = false;
+          if (msg.code === "join") {
+            clearSeat();
+            state.playerId = null;
+            state.snap = null;
+          }
+        }
+        const key = uiKey();
+        if (key !== state.uiKey) {
+          state.uiKey = key;
+          render();
+        }
+      };
+      ws.onclose = () => {
+        if (state.ws !== ws) return;
+        state.ws = null;
+        if (state.leaving) {
+          state.playerId = null;
+          state.snap = null;
+          state.uiKey = "";
+          state.reconnecting = false;
+          render();
+          return;
+        }
+        if (state.resumeToken && (state.seated || !state.error)) {
+          if (!state.error) state.error = tr("remote.002");
+          state.reconnecting = true;
+          render();
+          scheduleReconnect();
+          return;
+        }
+        state.playerId = null;
+        state.snap = null;
+        state.uiKey = "";
+        if (!state.error) state.error = tr("remote.003");
+        render();
+      };
+      ws.onerror = () => {
+        if (state.ws !== ws) return;
+        if (!state.error) state.error = tr("remote.004");
+      };
+      render();
+    }
+
+    function leave() {
+      state.leaving = true;
+      if (state.reconnectTimer) {
+        clearTimeout(state.reconnectTimer);
+        state.reconnectTimer = null;
+      }
+      send({ type: "leave" });
+      clearSeat();
+      const ws = state.ws;
+      state.ws = null;
+      if (ws) {
+        ws.onclose = null;
+        try { ws.close(); } catch (e) {}
+      }
+      state.playerId = null;
+      state.snap = null;
+      state.uiKey = "";
+      state.reconnecting = false;
+      state.error = "";
+      render();
+    }
+
+    function me() {
+      return (state.snap && state.snap.players || []).find(p => p.id === state.playerId);
+    }
+
+    function render() {
+      const root = document.getElementById("app");
+      if (!state.playerId || !state.snap) {
+        if (state.reconnecting) {
+          root.innerHTML = `
+            <h1>DR. QUIZMAN</h1>
+            <p class="sub">${tr("remote.042")}</p>
+            <p class="msg">${tr("remote.043")}</p>
+            <p class="err">${escapeHtml(state.error)}</p>
+            <button class="ghost" id="leave">${tr("remote.044")}</button>
+          `;
+          return;
+        }
+        root.innerHTML = `
+          <h1>DR. QUIZMAN</h1>
+          <p class="sub">${tr("remote.045")}</p>
+          <p>${tr("remote.046")}</p>
+          <label>${tr("remote.047")}</label>
+          <input id="name" maxlength="16" value="${escapeAttr(state.name)}" />
+          <label>${tr("remote.048")}</label>
+          <input id="pin" inputmode="numeric" maxlength="4" value="${escapeAttr(state.pin)}" />
+          <button class="primary" id="join">${tr("remote.049")}</button>
+          <p class="err">${escapeHtml(state.error)}</p>
+        `;
+        return;
+      }
+
+      const p = me() || {};
+      const s = state.snap;
+      const color = COLORS[state.colorIndex % COLORS.length];
+      const final = s.competition === "FINAL";
+      const sec = Math.ceil((p.finalTimeMs || 0) / 1000);
+      if (final && p.eliminated && !state.elimBuzz) {
+        state.elimBuzz = true;
+        try { navigator.vibrate([70, 40, 240]); } catch (e) {}
+      }
+      if (!p.eliminated) state.elimBuzz = false;
+      if (final && !p.eliminated && !p.finalFrozen && sec <= 8 && s.phase === "QUESTION" && !state.lowBuzz) {
+        state.lowBuzz = true;
+        try { navigator.vibrate(70); } catch (e) {}
+      }
+      if (!final || p.eliminated || p.finalFrozen || sec > 8 || s.phase !== "QUESTION") state.lowBuzz = false;
+      let body = "";
+      if (s.phase === "LOBBY") {
+        const readyN = (s.players || []).filter(x => x.ready).length;
+        const taken = new Set((s.players || []).filter(x => x.id !== state.playerId).map(x => x.avatarIndex));
+        const faces = Array.from({ length: 10 }, (_, i) => {
+          const mine = p.avatarIndex === i;
+          const busy = taken.has(i);
+          return `<button class="${mine ? "mine" : ""}${busy ? " taken" : ""}" data-avatar="${i}" ${busy ? "disabled" : ""}>
+            <img src="/avatars/${i}.png" alt="" />
+          </button>`;
+        }).join("");
+        body = `
+          <p class="msg" style="padding:8px">${tr("remote.050")}</p>
+          <div class="avatars">${faces}</div>
+          <p class="msg" style="padding:8px 8px 0;font-size:.95rem">${p.ready
+            ? tr("remote.005") + readyN + tr("remote.006") + s.players.length + ")"
+            : tr("remote.007")}</p>
+          <button class="primary" id="ready">${p.ready ? tr("remote.008") : tr("remote.009")}</button>
+        `;
+      } else if (s.phase === "TOPIC") {
+        const mine = s.topicChooserId && s.topicChooserId === state.playerId;
+        const keys = (s.topics || []).map((t, i) =>
+          `<button class="key topic" data-topic="${escapeAttr(t)}" ${mine ? "" : "disabled"}>${i + 1}</button>`
+        ).join("");
+        body = `
+          <div class="keys">${keys}</div>
+          <button class="ghost" id="pause">${s.paused ? tr("remote.010") : tr("remote.011")}</button>
+        `;
+      } else if (s.phase === "BET") {
+        const amounts = (s.betAmounts && s.betAmounts.length) ? s.betAmounts : [100, 200, 300, 400];
+        if (!s.bettingOpen) {
+          body = `
+            <p class="msg">${tr("remote.051")}</p>
+            <p class="msg" style="padding-top:0;color:var(--gold);font-weight:900">${escapeHtml((s.chosenTopic || "").toUpperCase())}</p>
+            <button class="ghost" id="pause">${s.paused ? tr("remote.012") : tr("remote.013")}</button>
+          `;
+        } else if (p.bet) {
+          body = `
+            <p class="msg">${tr("remote.052", p.bet)}</p>
+            <button class="ghost" id="pause">${s.paused ? tr("remote.014") : tr("remote.015")}</button>
+          `;
+        } else {
+          const keys = amounts.map((n) =>
+            `<button class="key bet" data-bet="${n}">${n}</button>`
+          ).join("");
+          body = `
+            <p class="msg" style="padding:8px 0 12px">${tr("remote.016", escapeHtml(s.chosenTopic || "—"))}</p>
+            <div class="keys">${keys}</div>
+            <button class="ghost" id="pause">${s.paused ? tr("remote.017") : tr("remote.018")}</button>
+          `;
+        }
+      } else if (s.phase === "QUESTION" || s.phase === "REVEAL") {
+        const q = s.question || {};
+        const bomb = !!s.bombHolderId;
+        const mineBomb = bomb && s.bombHolderId === state.playerId;
+        if (final && p.eliminated) {
+          body = `
+            <p class="msg">${tr("remote.053")}</p>
+            <button class="ghost" id="pause">${s.paused ? tr("remote.019") : tr("remote.020")}</button>
+          `;
+        } else if (bomb && !mineBomb) {
+          body = `
+            <p class="msg">${s.bombExploded ? tr("remote.021") : tr("remote.022")}</p>
+            <button class="ghost" id="pause">${s.paused ? tr("remote.023") : tr("remote.024")}</button>
+          `;
+        } else if (s.competition === "PUZZLE" && (p.contestMarks || 0) >= 4) {
+          body = `
+            <p class="msg">${tr("remote.054")}</p>
+            <button class="ghost" id="pause">${s.paused ? tr("remote.025") : tr("remote.026")}</button>
+          `;
+        } else if (s.competition === "BETS" && !p.bet) {
+          body = `
+            <p class="msg">${tr("remote.055")}</p>
+            <button class="ghost" id="pause">${s.paused ? tr("remote.027") : tr("remote.028")}</button>
+          `;
+        } else {
+          const disabled = p.answered || s.phase === "REVEAL";
+          const n = (q.answers && q.answers.length) || (q.trueFalse ? 2 : 4);
+          const keys = Array.from({ length: n }, (_, i) =>
+            `<button class="key" data-i="${i}" ${disabled ? "disabled" : ""}>${String.fromCharCode(65 + i)}</button>`
+          ).join("");
+          const clock = final ? `<div class="clock${p.finalFrozen ? " frozen" : (sec <= 8 ? " danger" : "")}">${p.finalFrozen ? tr("remote.029") : sec}</div>` : "";
+          body = `
+            ${mineBomb ? `<p class="msg" style="padding:8px 0 12px">${tr("remote.030")}</p>` : ""}
+            ${clock}
+            <div class="keys">${keys}</div>
+            <button class="ghost" id="pause">${s.paused ? tr("remote.031") : tr("remote.032")}</button>
+          `;
+        }
+      } else if (s.phase !== "GAME_OVER") {
+        body = `<button class="ghost" id="pause">${s.paused ? tr("remote.033") : tr("remote.034")}</button>`;
+      }
+
+      const face = (p.avatarIndex != null)
+        ? `<img class="face" src="/avatars/${p.avatarIndex}.png" alt="" />`
+        : "";
+      root.innerHTML = `
+        <div class="top">
+          <div class="who">
+            ${face}
+            <div>
+              <div class="name" style="color:${color}">${escapeHtml((p.name || tr("remote.035")).toUpperCase())}</div>
+              <div class="meta">${final ? (p.eliminated ? tr("remote.036") : sec + tr("remote.037")) : (p.score || 0)}${p.bet ? tr("remote.038") + p.bet : ""}  ·  PIN ${escapeHtml(s.pin || "")}</div>
+              ${pipsHtml(s, p)}
+            </div>
+          </div>
+          <button class="ghost" id="leave" style="width:auto;margin:0">${tr("remote.056")}</button>
+        </div>
+        <div class="title">${escapeHtml(s.competitionTitle || tr("remote.039"))}</div>
+        ${state.reconnecting ? `<p class="err">${tr("remote.040")}</p>` : ""}
+        ${body}
+      `;
+    }
+
+    document.getElementById("app").addEventListener("pointerup", (e) => {
+      const t = e.target.closest("button");
+      if (!t || t.disabled) return;
+      if (t.id === "join") {
+        const root = document.getElementById("app");
+        state.name = root.querySelector("#name").value;
+        state.pin = root.querySelector("#pin").value.replace(/\D/g, "").slice(0, 4);
+        if (state.pin.length !== 4) { state.error = tr("remote.041"); render(); return; }
+        holdAwake();
+        connect();
+        return;
+      }
+      if (t.id === "leave") { leave(); return; }
+      const p = me() || {};
+      const s = state.snap;
+      if (t.id === "ready") { vibrate(); send({ type: "ready", ready: !p.ready }); return; }
+      if (t.dataset.avatar != null) {
+        vibrate();
+        send({ type: "avatar", index: Number(t.dataset.avatar) });
+        return;
+      }
+      if (t.id === "pause") { send({ type: "pause" }); return; }
+      if (t.classList.contains("topic") && t.dataset.topic) {
+        vibrate();
+        send({ type: "topic", topic: t.dataset.topic });
+        return;
+      }
+      if (t.classList.contains("bet") && t.dataset.bet) {
+        vibrate();
+        send({ type: "bet", amount: Number(t.dataset.bet) });
+        return;
+      }
+      if (t.classList.contains("key") && !t.disabled && s && s.question) {
+        vibrate();
+        send({ type: "answer", questionId: s.question.id, index: Number(t.dataset.i) });
+      }
+    });
+
+    function pipsHtml(s, p) {
+      const goal = s.contestMarksGoal || 0;
+      if (goal <= 0) return "";
+      const n = p.contestMarks || 0;
+      const dots = Array.from({ length: goal }, (_, i) => {
+        const on = i < n ? " on" : "";
+        const goalPip = i === goal - 1 && i >= n ? " goal" : "";
+        return `<span class="pip${on}${goalPip}"></span>`;
+      }).join("");
+      return `<div class="pips">${dots}</div>`;
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    }
+    function escapeAttr(s) { return escapeHtml(s); }
+
+    render();
+    if (state.resumeToken && /^\d{4}$/.test(state.pin)) {
+      state.reconnecting = true;
+      connect();
+    }
+  </script>
+</body>
+</html>

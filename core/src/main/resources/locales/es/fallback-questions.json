@@ -1,0 +1,112 @@
+{
+  "Questions": [
+    {
+      "Question_ID": 9001,
+      "Question": "¿Cuántas cuerdas tiene una guitarra clásica?",
+      "Answers": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "Correct_Answer_Index": 2,
+      "Topic": "Música"
+    },
+    {
+      "Question_ID": 9002,
+      "Question": "¿Cuál es la capital de Australia?",
+      "Answers": [
+        "Sídney",
+        "Melbourne",
+        "Canberra",
+        "Perth"
+      ],
+      "Correct_Answer_Index": 2,
+      "Topic": "Geografía"
+    },
+    {
+      "Question_ID": 9004,
+      "Question": "¿Cuántos grados tiene un ángulo recto?",
+      "Answers": [
+        "45",
+        "90",
+        "180",
+        "360"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Ciencia"
+    },
+    {
+      "Question_ID": 9005,
+      "Question": "¿Qué planeta está más cerca del Sol?",
+      "Answers": [
+        "Venus",
+        "Tierra",
+        "Marte",
+        "Mercurio"
+      ],
+      "Correct_Answer_Index": 3,
+      "Topic": "Ciencia"
+    },
+    {
+      "Question_ID": 9006,
+      "Question": "¿En qué año pisó una persona la Luna por primera vez?",
+      "Answers": [
+        "1957",
+        "1961",
+        "1969",
+        "1975"
+      ],
+      "Correct_Answer_Index": 2,
+      "Topic": "Historia"
+    },
+    {
+      "Question_ID": 9007,
+      "Question": "¿Cuál es el océano más grande?",
+      "Answers": [
+        "Atlántico",
+        "Índico",
+        "Ártico",
+        "Pacífico"
+      ],
+      "Correct_Answer_Index": 3,
+      "Topic": "Geografía"
+    },
+    {
+      "Question_ID": 9008,
+      "Question": "¿Cuántas teclas tiene un piano estándar?",
+      "Answers": [
+        "76",
+        "88",
+        "92",
+        "64"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Música"
+    },
+    {
+      "Question_ID": 9009,
+      "Question": "¿Cómo se llamaba el caballo de Alejandro Magno?",
+      "Answers": [
+        "Bucéfalo",
+        "Rocinante",
+        "Pegaso",
+        "Incitatus"
+      ],
+      "Correct_Answer_Index": 0,
+      "Topic": "Historia"
+    },
+    {
+      "Question_ID": 9010,
+      "Question": "¿Qué elemento químico tiene el símbolo Au?",
+      "Answers": [
+        "Plata",
+        "Oro",
+        "Aluminio",
+        "Argón"
+      ],
+      "Correct_Answer_Index": 1,
+      "Topic": "Ciencia"
+    }
+  ]
+}

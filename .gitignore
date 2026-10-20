@@ -1,0 +1,35 @@
+.gradle/
+.idea/
+**/.DS_Store
+build/
+local.properties
+*.iml
+captures/
+.cxx/
+*.apk
+*.aab
+.kotlin/
+supabase/.temp/
+supabase/.env*
+!supabase/.env.example
+outputs/supabase-upload/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+*.pem
+*.key
+
+# Separate website checkout and generated working files
+/website/
+/miniapp/.openai/
+/outputs/
+/backups/
+/preview/
+/share/
+/assets/
+/memo.txt
+/docs/*.zip
