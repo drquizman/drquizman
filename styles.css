@@ -248,3 +248,8 @@ h1 span{
   .site-facts{gap:8px}
   .site-stats{width:100%;justify-content:space-between;gap:12px}
 }
+
+/* Two launch options stay within the existing landing layout. */
+.actions{flex-wrap:wrap}.actions .primary-btn{max-width:100%;white-space:normal;overflow-wrap:anywhere}.web-launch{background:linear-gradient(135deg,#ffe9b5,#e9bd78)}
+
+@media(max-width:680px){.actions .web-launch{font-size:14px;padding:16px 18px}}
