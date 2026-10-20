@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#160d19">
+  <meta name="description" content="Запустить Dr. Quizman в браузере — игра на большом экране, телефоны вместо пультов.">
+  <title>Dr. Quizman — пульт</title>
+  <link rel="stylesheet" href="../launch.css?v=20261021-remotes">
+  <script src="../launch.js?v=20261021-remotes" defer></script>
+</head>
+<body data-mode="remote">
+  <main id="preparing" class="preparing">
+    <section class="card" aria-labelledby="heading">
+      <a class="home" href="/">← На сайт Dr. Quizman</a>
+      <img class="logo" src="../../assets/logo.png" alt="Dr. Quizman">
+      <div id="spinner" class="spinner" aria-hidden="true"></div>
+      <h1 id="heading">Подключаем пульт…</h1>
+      <p id="status" role="status" aria-live="polite">Пробуждаем сервер игры. Обычно это занимает около минуты, если он отдыхал.</p>
+      <p class="hint">Оставьте эту страницу открытой. Пульт откроется автоматически.</p>
+      <div class="actions">
+        <button id="retry" hidden>Попробовать снова</button>
+        <a data-direct-game href="https://quizman-web-prototype.onrender.com/remote" target="_blank" rel="noopener">Открыть пульт отдельно ↗</a>
+      </div>
+      <noscript>Для запуска пульта включите JavaScript или откройте его по ссылке выше.</noscript>
+    </section>
+  </main>
+  <iframe id="studio" title="Пульт Dr. Quizman" allow="autoplay; fullscreen; screen-wake-lock" allowfullscreen referrerpolicy="no-referrer" hidden></iframe>
+  <nav id="frame-help" class="frame-help" aria-label="Открытие игры" hidden>
+    <a href="/">На сайт</a><a data-direct-game href="https://quizman-web-prototype.onrender.com/remote" target="_blank" rel="noopener">Открыть отдельно ↗</a>
+  </nav>
+</body>
+</html>

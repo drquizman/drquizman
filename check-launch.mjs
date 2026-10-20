@@ -2,10 +2,10 @@ import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import {readFile} from 'node:fs/promises';
 const code=await readFile(new URL('./web/launch.js',import.meta.url),'utf8');
-function setup(responses){
+function setup(responses,{remote=false,search=''}={}){
  let clock=0,id=0,calls=0;const timers=new Map(),listeners={},elements={};
  for(const name of ['preparing','studio','status','retry','spinner','frame-help'])elements[name]={hidden:['studio','retry','frame-help'].includes(name),textContent:'',removeAttribute(key){delete this[key];},addEventListener(name,fn){this[name]=fn;}};
- const context=vm.createContext({document:{getElementById:name=>elements[name]},AbortController,Date:{now:()=>clock},addEventListener:(name,fn)=>listeners[name]=fn,setTimeout:(fn,ms)=>{const key=++id;timers.set(key,{fn,at:clock+ms});return key;},clearTimeout:key=>timers.delete(key),fetch:async(url,options)=>{calls++;assert.equal(url,'https://quizman-web-prototype.onrender.com/health');assert.equal(options.credentials,'omit');const value=responses.shift();if(value instanceof Error)throw value;return {ok:value==='ok'||value==='html',text:async()=>value==='html'?'<html>Render is starting</html>':value||'busy'};}});
+ const context=vm.createContext({URL,URLSearchParams,location:{search},document:{body:{dataset:{mode:remote?'remote':''}},querySelectorAll:()=>[],getElementById:name=>elements[name]},AbortController,Date:{now:()=>clock},addEventListener:(name,fn)=>listeners[name]=fn,setTimeout:(fn,ms)=>{const key=++id;timers.set(key,{fn,at:clock+ms});return key;},clearTimeout:key=>timers.delete(key),fetch:async(url,options)=>{calls++;assert.equal(url,'https://quizman-web-prototype.onrender.com/health');assert.equal(options.credentials,'omit');const value=responses.shift();if(value instanceof Error)throw value;return {ok:value==='ok'||value==='html',text:async()=>value==='html'?'<html>Render is starting</html>':value||'busy'};}});
  vm.runInContext(code,context);
  async function flush(){for(let i=0;i<12;i++)await Promise.resolve();}
  async function advance(ms){const end=clock+ms;for(;;){await flush();const entry=[...timers].filter(([,v])=>v.at<=end).sort((a,b)=>a[1].at-b[1].at)[0];if(!entry)break;clock=entry[1].at;timers.delete(entry[0]);entry[1].fn();}clock=end;await flush();}
@@ -17,3 +17,8 @@ env=setup([]);await env.advance(150000);assert.equal(env.elements.retry.hidden,f
 env=setup(['ok']);await env.advance(30000);assert.equal(env.elements.retry.hidden,false,'frame timeout offers retry');
 env=setup([]);await env.advance(150000);env.elements.retry.click();await env.flush();assert.equal(env.elements.retry.hidden,true,'manual retry restores loading');env.listeners.pagehide();await env.advance(3000);
 console.log('PASS: ready/frame loading, cold-start retries, non-ready HTML, finite timeout, manual retry, navigation cancellation and no polling after readiness');
+
+env=setup(['ok'],{remote:true,search:'?pin=1234'});await env.flush();assert.equal(env.elements.studio.src,'https://quizman-web-prototype.onrender.com/remote?pin=1234');
+env=setup(['ok'],{remote:true});await env.flush();assert.equal(env.elements.studio.src,'https://quizman-web-prototype.onrender.com/remote','manual PIN entry supported');
+env=setup(['ok'],{remote:true,search:'?pin=1234evil&url=https://evil.example'});await env.flush();assert.equal(env.elements.studio.src,'https://quizman-web-prototype.onrender.com/remote','invalid PIN and arbitrary redirect ignored');
+console.log('PASS: remote launcher preserves valid room PIN, supports manual entry and rejects invalid PIN/arbitrary redirects');

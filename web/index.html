@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#160d19">
   <meta name="description" content="Запустить Dr. Quizman в браузере — игра на большом экране, телефоны вместо пультов.">
   <title>Dr. Quizman — веб-версия</title>
-  <link rel="stylesheet" href="launch.css?v=20261021">
-  <script src="launch.js?v=20261021" defer></script>
+  <link rel="stylesheet" href="launch.css?v=20261021-remotes">
+  <script src="launch.js?v=20261021-remotes" defer></script>
 </head>
 <body>
   <main id="preparing" class="preparing">
@@ -20,14 +20,14 @@
       <p class="hint">Оставьте эту страницу открытой. Игра запустится автоматически.</p>
       <div class="actions">
         <button id="retry" hidden>Попробовать снова</button>
-        <a href="https://quizman-web-prototype.onrender.com/" target="_blank" rel="noopener">Открыть игру отдельно ↗</a>
+        <a data-direct-game href="https://quizman-web-prototype.onrender.com/" target="_blank" rel="noopener">Открыть игру отдельно ↗</a>
       </div>
       <noscript>Для запуска игры включите JavaScript или откройте её по ссылке выше.</noscript>
     </section>
   </main>
   <iframe id="studio" title="Игровая студия Dr. Quizman" allow="autoplay; fullscreen" allowfullscreen referrerpolicy="no-referrer" hidden></iframe>
   <nav id="frame-help" class="frame-help" aria-label="Открытие игры" hidden>
-    <a href="/">На сайт</a><a href="https://quizman-web-prototype.onrender.com/" target="_blank" rel="noopener">Открыть отдельно ↗</a>
+    <a href="/">На сайт</a><a data-direct-game href="https://quizman-web-prototype.onrender.com/" target="_blank" rel="noopener">Открыть отдельно ↗</a>
   </nav>
 </body>
 </html>

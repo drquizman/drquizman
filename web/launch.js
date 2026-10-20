@@ -1,14 +1,19 @@
 'use strict';
 (()=>{
   const origin='https://quizman-web-prototype.onrender.com';
+  const remote=document.body.dataset.mode==='remote';
+  const target=new URL(remote?'/remote':'/',origin);
+  const pin=new URLSearchParams(location.search).get('pin');
+  if(remote&&/^\d{4}$/.test(pin||''))target.searchParams.set('pin',pin);
+  document.querySelectorAll('[data-direct-game]').forEach(link=>link.href=target.href);
   const preparing=document.getElementById('preparing'),studio=document.getElementById('studio'),status=document.getElementById('status'),retry=document.getElementById('retry'),spinner=document.getElementById('spinner');
   let generation=0,request,frameTimer;
   function failed(message){spinner.hidden=true;status.textContent=message;retry.hidden=false;}
   function openStudio(own){
-    status.textContent='Сервер готов. Открываем студию…';
+    status.textContent=remote?'Сервер готов. Подключаем пульт…':'Сервер готов. Открываем студию…';
     studio.onload=()=>{if(own!==generation)return;clearTimeout(frameTimer);studio.hidden=false;preparing.hidden=true;document.getElementById('frame-help').hidden=false;};
-    frameTimer=setTimeout(()=>{if(own===generation)failed('Сервер готов, но студия долго загружается. Попробуйте снова или откройте игру отдельно.');},30000);
-    studio.src=origin+'/';
+    frameTimer=setTimeout(()=>{if(own===generation)failed(remote?'Сервер готов, но пульт долго загружается. Попробуйте снова или откройте его отдельно.':'Сервер готов, но студия долго загружается. Попробуйте снова или откройте игру отдельно.');},30000);
+    studio.src=target.href;
   }
   async function prepare(){
     const own=++generation;request?.abort();clearTimeout(frameTimer);studio.onload=null;studio.hidden=true;studio.removeAttribute('src');preparing.hidden=false;document.getElementById('frame-help').hidden=true;
@@ -22,10 +27,10 @@
       }catch{/* Aborted requests still reach Render and can start a sleeping service. */}
       finally{clearTimeout(timeout);}
       if(own!==generation)return;
-      status.textContent='Студия ещё запускается. Это может занять чуть больше минуты…';
+      status.textContent=remote?'Сервер пульта ещё запускается. Это может занять чуть больше минуты…':'Студия ещё запускается. Это может занять чуть больше минуты…';
       await new Promise(resolve=>setTimeout(resolve,3000));
     }
-    if(own===generation)failed('Не удалось дождаться сервера. Проверьте интернет и попробуйте снова или откройте игру отдельно.');
+    if(own===generation)failed(remote?'Не удалось дождаться сервера. Проверьте интернет и попробуйте снова или откройте пульт отдельно.':'Не удалось дождаться сервера. Проверьте интернет и попробуйте снова или откройте игру отдельно.');
   }
   retry.addEventListener('click',prepare);
   addEventListener('pagehide',()=>{generation++;request?.abort();clearTimeout(frameTimer);});
