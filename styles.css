@@ -21,7 +21,7 @@ body{
   position:relative;
   width:min(1360px,100%);
   height:min(820px,calc(100vh - 48px));
-  min-height:620px;
+  min-height:720px;
   border-radius:34px;
   overflow:hidden;
   border:1px solid rgba(255,255,255,.08);
@@ -123,16 +123,16 @@ h1 span{
   box-shadow:0 20px 46px rgba(255,180,48,.34), inset 0 1px rgba(255,255,255,.92);
 }
 .primary-btn span{font-size:20px}
-.badges{
-  display:flex;flex-wrap:wrap;gap:10px;
-  margin-top:22px
+.device-guide{
+  margin-top:22px;
+  max-width:540px;
+  color:#e5dbe6;
+  font-size:15px;
+  line-height:1.5
 }
-.badges span{
-  padding:8px 12px;border-radius:999px;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.08);
-  color:#d9ced9;font-size:12px;font-weight:800
-}
+.device-guide p{margin:0 0 8px}
+.device-guide p:last-child{margin-bottom:0}
+.device-guide strong{color:#ffd46f}
 
 .host-side{
   position:relative;
