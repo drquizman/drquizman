@@ -1,0 +1,46 @@
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const visible=p=>p&&Number.isFinite(p.x)&&Number.isFinite(p.y)&&(p.visibility??1)>=.4;
+export function analyzePose(points){
+  const ls=points[11],rs=points[12],lh=points[23],rh=points[24],lw=points[15],rw=points[16];
+  const lost=guide=>({tracked:false,zone:null,guide});
+  if(![ls,rs,lh,rh,lw,rw].every(visible))return lost('Покажи плечи, пояс и обе кисти');
+  const width=Math.abs(ls.x-rs.x),hipY=(lh.y+rh.y)/2,shoulderY=(ls.y+rs.y)/2,torso=hipY-shoulderY;
+  if(width<.06||torso<.08)return lost('Встань лицом к камере, чтобы был виден пояс');
+  const cx=(ls.x+rs.x)/2,orientation=Math.sign(ls.x-rs.x)||1;
+  const hand=p=>({x:clamp((p.x-cx)/width*orientation*.45,-1.1,1.1),y:clamp(.92+(hipY-p.y)/torso*.42,.3,2.25),z:.15});
+  const xy=p=>({x:(p.x-cx)/width*orientation,h:(hipY-p.y)/torso});
+  const a=xy(lw),b=xy(rw);
+  // A lowered wrist beside the hip is neutral, even with perspective/noise.
+  // Low saves require a deliberate reach away from the corresponding shoulder.
+  const reach=(p,s)=>p.h>.12&&Math.abs(p.x-s)>.55;
+  const extended=(p,s)=>Math.abs(p.x)>.85&&reach(p,s);
+  const ae=extended(a,xy(ls).x),be=extended(b,xy(rs).x);
+  const row=h=>h>1.35?0:h<.55?2:1;
+  let zone=null,guide='Одна рука вбок — отбить. Обе в одну сторону — прыжок';
+  if(ae&&be&&Math.sign(a.x)!==Math.sign(b.x))guide='Для прыжка направь обе руки в одну сторону';
+  else if(reach(a,xy(ls).x)&&reach(b,xy(rs).x)&&Math.sign(a.x)===Math.sign(b.x)&&Math.min(Math.abs(a.x),Math.abs(b.x))>.42&&Math.max(Math.abs(a.x),Math.abs(b.x))>.85&&Math.abs(a.h-b.h)<.8){
+    zone=row((a.h+b.h)/2)*4+(a.x>0?0:3);guide='Прыжок двумя руками';
+  }else{
+    const chosen=ae&&!be?a:be&&!ae?b:null;
+    if(chosen){zone=row(chosen.h)*4+(chosen.x>0?1:2);guide='Отбивание одной рукой';}
+  }
+  return {tracked:true,zone,leftHand:hand(lw),rightHand:hand(rw),guide};
+}
+export class MotionTracker{
+  constructor(){this.candidate=null;this.since=0;this.zone=null;this.hands=null;this.lastResult=null;this.lastSeen=-Infinity;}
+  update(points,now){
+    const result=analyzePose(points);
+    if(!result.tracked){
+      const previous=this.lastResult,dive=previous?.zone!==null&&previous?.zone!==undefined&&[0,3].includes(previous.zone%4);
+      // The clock is anchored to the last observed body, never to a held frame.
+      if(previous&&now-this.lastSeen<=(dive?1300:350))return {...structuredClone(previous),held:true,guide:dive?'Завершаем прыжок':'Восстанавливаем отслеживание'};
+      this.zone=null;this.candidate=null;this.hands=null;this.lastResult=null;return result;
+    }
+    if(result.zone!==this.candidate){this.candidate=result.zone;this.since=now;}
+    if(result.zone===null||now-this.since>=100)this.zone=this.candidate;
+    if(!this.hands)this.hands={leftHand:{...result.leftHand},rightHand:{...result.rightHand}};
+    else for(const key of ['leftHand','rightHand'])for(const axis of ['x','y','z'])this.hands[key][axis]+=(result[key][axis]-this.hands[key][axis])*.45;
+    this.lastSeen=now;this.lastResult={...result,...structuredClone(this.hands),zone:this.zone,held:false};
+    return this.lastResult;
+  }
+}
